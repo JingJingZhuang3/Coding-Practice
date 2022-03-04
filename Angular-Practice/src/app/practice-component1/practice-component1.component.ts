@@ -12,6 +12,7 @@ export class PracticeComponent1Component implements OnInit {
   uname: string = 'John Doe';
   age: number = 23;
   cnt: number = 0;
+  items = ['Apple', 'Book', 'Cream'];
 
   Add() {
     this.cnt++;

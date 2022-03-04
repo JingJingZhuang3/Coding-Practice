@@ -9,9 +9,9 @@
 <h3 [title]="uname">Move your cursor here</h3>
 
 <!-- Event binding -->
-<button (click)="Sub()">-</button>
+<button [title]="'Current Count: ' + cnt" (click)="Sub()">-</button>
 Count: {{cnt}}
-<button (click)="Add()">+</button>
+<button [title]="'Current Count: ' + cnt" (click)="Add()">+</button>
 
 <!-- 
 shortcut: 
@@ -19,3 +19,17 @@ shortcut:
     shift + alt + up/down : copy paste up/down line
     ctrl + d : delete line
  -->
+
+<!-- Structual Directives -->
+<ul>
+    <li *ngFor="let arr of items; index as i">index {{i}} - {{arr}}</li>
+</ul>
+
+{{uname}}'s Age is <input type="text" [(ngModel)]="age">
+
+<div *ngIf="age >= 18; else children">
+    <p style="font-weight: bold;"> {{uname}} is adult. </p>
+</div>
+<ng-template #children>
+    <p style="font-weight: bold;">{{uname}} is under 18.</p>
+</ng-template>
