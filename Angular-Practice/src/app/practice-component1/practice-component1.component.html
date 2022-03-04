@@ -1,0 +1,21 @@
+<h1>practice-component1 works!</h1>
+<!-- Interpolation binding -->
+<h3>User Name: {{uname}}</h3>
+<h3>Age: {{age}}</h3>
+<h3>Age in next year: {{age + 1}}</h3>
+
+<!-- Property binding -->
+<h3 title="{{uname}}">This is use for property binding</h3>
+<h3 [title]="uname">Move your cursor here</h3>
+
+<!-- Event binding -->
+<button (click)="Sub()">-</button>
+Count: {{cnt}}
+<button (click)="Add()">+</button>
+
+<!-- 
+shortcut: 
+    alt + up/down : move line up/down
+    shift + alt + up/down : copy paste up/down line
+    ctrl + d : delete line
+ -->
