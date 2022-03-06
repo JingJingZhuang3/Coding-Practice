@@ -1,0 +1,29 @@
+<h1>Structual Directives: ngFor</h1>
+<ul>
+    <li *ngFor="let arr of items; index as i">index {{i}} - {{arr}}</li>
+</ul>
+
+<h1>Structual Directives: ngIf</h1>
+<div *ngIf="age >= 18; else children">
+    <p style="font-weight: bold;"> {{uname}} is adult. </p>
+</div>
+<ng-template #children>
+    <p style="font-weight: bold;">{{uname}} is under 18.</p>
+</ng-template>
+
+<h1>Structual Directives: ngSwitch</h1>
+<div [ngSwitch]="userLevel">
+    <p *ngSwitchCase="'normal'">welcome user</p>
+    <p *ngSwitchCase="'vip'">welcome vip user</p>
+    <p *ngSwitchCase="'balck-gold'">welcome balck-gold user</p>
+    <p *ngSwitchDefault>you haven't login</p>
+</div>
+
+<h1>Attribute Directives: ngModel</h1>
+{{uname}}'s Age is <input type="text" [(ngModel)]="age">
+
+<h1>Attribute Directives: ngStyle</h1>
+<button [ngStyle]="myStyleObj" (click)="loadMore()">Change Color</button>
+
+<h1>Attribute Directives: ngClass</h1>
+<button [ngClass]="myClassObj" (click)="loadMore2()">Change Color</button>

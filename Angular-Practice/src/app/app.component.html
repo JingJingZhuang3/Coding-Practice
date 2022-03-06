@@ -1,1 +1,14 @@
-<app-practice-component1></app-practice-component1>
+<nav>
+    <button [ngStyle]="bindingButStyle" (click)="navButton('dataBinding')">Data Binding</button> |
+    <button [ngStyle]="directiveButStyle" (click)="navButton('directives')">Directives</button>
+</nav>
+
+<div [ngSwitch]="title">
+    <div *ngSwitchCase="'dataBinding'">
+        <app-practice-component1></app-practice-component1>
+    </div>
+
+    <div *ngSwitchCase="'directives'">
+        <app-practice-component2></app-practice-component2>
+    </div>
+</div>

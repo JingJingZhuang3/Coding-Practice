@@ -1,14 +1,13 @@
-<h1>practice-component1 works!</h1>
-<!-- Interpolation binding -->
+<h1>Interpolation binding</h1>
 <h3>User Name: {{uname}}</h3>
 <h3>Age: {{age}}</h3>
 <h3>Age in next year: {{age + 1}}</h3>
 
-<!-- Property binding -->
+<h1>Property binding</h1>
 <h3 title="{{uname}}">This is use for property binding</h3>
 <h3 [title]="uname">Move your cursor here</h3>
 
-<!-- Event binding -->
+<h1>Event binding</h1>
 <button [title]="'Current Count: ' + cnt" (click)="Sub()">-</button>
 Count: {{cnt}}
 <button [title]="'Current Count: ' + cnt" (click)="Add()">+</button>
@@ -19,17 +18,3 @@ shortcut:
     shift + alt + up/down : copy paste up/down line
     ctrl + d : delete line
  -->
-
-<!-- Structual Directives -->
-<ul>
-    <li *ngFor="let arr of items; index as i">index {{i}} - {{arr}}</li>
-</ul>
-
-{{uname}}'s Age is <input type="text" [(ngModel)]="age">
-
-<div *ngIf="age >= 18; else children">
-    <p style="font-weight: bold;"> {{uname}} is adult. </p>
-</div>
-<ng-template #children>
-    <p style="font-weight: bold;">{{uname}} is under 18.</p>
-</ng-template>
