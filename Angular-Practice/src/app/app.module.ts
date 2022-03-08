@@ -5,9 +5,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { PracticeComponent1Component } from './practice-component1/practice-component1.component';
 import { PracticeComponent2Component } from './practice-component2/practice-component2.component';
+import { CustomDirectiveDirective } from './custom-directive.directive';
+import { TodolistComponent } from './todolist/todolist.component';
 
 @NgModule({
-  declarations: [AppComponent, PracticeComponent1Component, PracticeComponent2Component],
+  declarations: [AppComponent, PracticeComponent1Component, PracticeComponent2Component, CustomDirectiveDirective, TodolistComponent],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

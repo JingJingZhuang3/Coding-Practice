@@ -2,11 +2,11 @@
 <h3>User Name: {{uname}}</h3>
 <h3>Age: {{age}}</h3>
 <h3>Age in next year: {{age + 1}}</h3>
-
+<hr>
 <h1>Property binding</h1>
 <h3 title="{{uname}}">This is use for property binding</h3>
 <h3 [title]="uname">Move your cursor here</h3>
-
+<hr>
 <h1>Event binding</h1>
 <button [title]="'Current Count: ' + cnt" (click)="Sub()">-</button>
 Count: {{cnt}}

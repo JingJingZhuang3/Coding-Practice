@@ -1,8 +1,9 @@
 <nav>
-    <button [ngStyle]="bindingButStyle" (click)="navButton('dataBinding')">Data Binding</button> |
-    <button [ngStyle]="directiveButStyle" (click)="navButton('directives')">Directives</button>
+    <button [ngClass]="bindingButStyle" (click)="navButton('dataBinding')">Data Binding</button> |
+    <button [ngClass]="directiveButStyle" (click)="navButton('directives')">Directives</button> |
+    <button [ngClass]="todoButStyle" (click)="navButton('todolist')">To-Do List</button>
 </nav>
-
+<hr>
 <div [ngSwitch]="title">
     <div *ngSwitchCase="'dataBinding'">
         <app-practice-component1></app-practice-component1>
@@ -10,5 +11,9 @@
 
     <div *ngSwitchCase="'directives'">
         <app-practice-component2></app-practice-component2>
+    </div>
+
+    <div *ngSwitchCase="'todolist'">
+        <app-todolist></app-todolist>
     </div>
 </div>

@@ -11,6 +11,7 @@ export class PracticeComponent2Component implements OnInit {
   uname: string = 'John Doe';
   age: number = 23;
   cnt: number = 0;
+  msg = '';
   items = ['Apple', 'Book', 'Cream'];
   myStyleObj = {
     backgroundColor: '#383',
@@ -32,5 +33,16 @@ export class PracticeComponent2Component implements OnInit {
   loadMore2() {
     this.myClassObj['btn-danger'] = true;
     this.myClassObj['btn-success'] = false;
+  }
+  doUnameChange() {
+    if (this.age >= 0 && this.age < 18) {
+      this.msg = this.uname + ' is under 18.';
+    } else if (this.age == 18) {
+      this.msg = this.uname + ' is 18 years old.';
+    } else if (this.age > 18) {
+      this.msg = this.uname + ' is adult.';
+    } else {
+      this.msg = 'Invaild age.';
+    }
   }
 }

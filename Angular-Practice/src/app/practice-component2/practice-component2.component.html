@@ -18,12 +18,25 @@
     <p *ngSwitchCase="'balck-gold'">welcome balck-gold user</p>
     <p *ngSwitchDefault>you haven't login</p>
 </div>
-
-<h1>Attribute Directives: ngModel</h1>
-{{uname}}'s Age is <input type="text" [(ngModel)]="age">
-
+<hr>
+<h1>Attribute Directives: ngModel & ngModelChange</h1>
+<!-- ngModelChange: listen user input -->
+{{uname}}'s Age is <input type="text" [(ngModel)]="age" (ngModelChange)="doUnameChange()">
+{{ msg }}
 <h1>Attribute Directives: ngStyle</h1>
 <button [ngStyle]="myStyleObj" (click)="loadMore()">Change Color</button>
 
 <h1>Attribute Directives: ngClass</h1>
 <button [ngClass]="myClassObj" (click)="loadMore2()">Change Color</button>
+<hr>
+<h1>Custom Directive</h1>
+<h3>Before:</h3>
+<p>
+    A directive is a custom HTML element that is used to extend the power of HTML.
+    Angular 2 has the following directives that get called as part of the BrowserModule module.
+</p>
+<h3>After:</h3>
+<p appCustomDirective>
+    A directive is a custom HTML element that is used to extend the power of HTML.
+    Angular 2 has the following directives that get called as part of the BrowserModule module.
+</p>
