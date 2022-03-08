@@ -16,6 +16,7 @@ export class TodolistComponent implements OnInit {
   addTodo() {
     if (this.task.length != 0) {
       this.todolist.push(this.task);
+      this.task = '';
       this.alert = '';
       this.alertStyle = {};
     } else {

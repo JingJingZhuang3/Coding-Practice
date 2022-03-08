@@ -7,9 +7,19 @@ import { PracticeComponent1Component } from './practice-component1/practice-comp
 import { PracticeComponent2Component } from './practice-component2/practice-component2.component';
 import { CustomDirectiveDirective } from './custom-directive.directive';
 import { TodolistComponent } from './todolist/todolist.component';
+import { EmployeelistComponent } from './employeelist/employeelist.component';
+import { GenderPipe } from './gender.pipe';
 
 @NgModule({
-  declarations: [AppComponent, PracticeComponent1Component, PracticeComponent2Component, CustomDirectiveDirective, TodolistComponent],
+  declarations: [
+    AppComponent,
+    PracticeComponent1Component,
+    PracticeComponent2Component,
+    CustomDirectiveDirective,
+    TodolistComponent,
+    EmployeelistComponent,
+    GenderPipe,
+  ],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

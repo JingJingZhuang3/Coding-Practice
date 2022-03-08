@@ -22,6 +22,10 @@ export class AppComponent {
   todoButStyle = {
     btn: false,
   };
+
+  employeelistButStyle = {
+    btn: false,
+  };
   navButton(nav: string) {
     if (nav == 'dataBinding') {
       this.title = nav;
@@ -49,11 +53,19 @@ export class AppComponent {
       this.bindingButStyle.btn = false;
       this.directiveButStyle.btn = true;
       this.todoButStyle.btn = false;
+      this.employeelistButStyle.btn = false;
     } else if (nav == 'todolist') {
       this.title = nav;
       this.bindingButStyle.btn = false;
       this.directiveButStyle.btn = false;
       this.todoButStyle.btn = true;
+      this.employeelistButStyle.btn = false;
+    } else if (nav == 'employeelist') {
+      this.title = nav;
+      this.bindingButStyle.btn = false;
+      this.directiveButStyle.btn = false;
+      this.todoButStyle.btn = false;
+      this.employeelistButStyle.btn = true;
     }
   }
 }
