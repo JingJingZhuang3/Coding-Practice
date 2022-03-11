@@ -8,7 +8,8 @@
         <th>Salary</th>
         <th>Birthday</th>
         <th>Gender</th>
-        <th>zzmm</th>
+        <th>Politics Status - Short</th>
+        <th>Politics Status - Long</th>
     </tr>
     <tr *ngFor="let emp of empList">
         <td>{{emp.eid}}</td>
@@ -18,6 +19,7 @@
         <!-- use : means pass param to custom pipe -->
         <!-- <td>{{emp.gender | gender : 'zh'}}</td> -->
         <td>{{emp.gender | gender}}</td>
-        <td>{{emp.zzmm}}</td>
+        <td>{{emp.zzmm | zzmm}}</td>
+        <td>{{emp.zzmm | zzmm:'long'}}</td>
     </tr>
 </table>

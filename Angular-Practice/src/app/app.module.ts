@@ -9,6 +9,7 @@ import { CustomDirectiveDirective } from './custom-directive.directive';
 import { TodolistComponent } from './todolist/todolist.component';
 import { EmployeelistComponent } from './employeelist/employeelist.component';
 import { GenderPipe } from './gender.pipe';
+import { ZzmmPipe } from './zzmm.pipe';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { GenderPipe } from './gender.pipe';
     TodolistComponent,
     EmployeelistComponent,
     GenderPipe,
+    ZzmmPipe,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
