@@ -10,7 +10,9 @@ import { TodolistComponent } from './todolist/todolist.component';
 import { EmployeelistComponent } from './employeelist/employeelist.component';
 import { GenderPipe } from './gender.pipe';
 import { ZzmmPipe } from './zzmm.pipe';
-
+import { ProductManagementComponent } from './product-management/product-management.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LoadProductsComponent } from './load-products/load-products.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,8 +23,10 @@ import { ZzmmPipe } from './zzmm.pipe';
     EmployeelistComponent,
     GenderPipe,
     ZzmmPipe,
+    ProductManagementComponent,
+    LoadProductsComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

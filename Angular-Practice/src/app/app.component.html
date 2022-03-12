@@ -2,7 +2,9 @@
     <button [ngClass]="bindingButStyle" (click)="navButton('dataBinding')">Data Binding</button> |
     <button [ngClass]="directiveButStyle" (click)="navButton('directives')">Directives</button> |
     <button [ngClass]="todoButStyle" (click)="navButton('todolist')">To-Do List</button> |
-    <button [ngClass]="employeelistButStyle" (click)="navButton('employeelist')">Employee List</button>
+    <button [ngClass]="employeelistButStyle" (click)="navButton('employeelist')">Employee List</button> |
+    <button [ngClass]='productManageButStyle' (click)="navButton('productManage')">Product Management</button> |
+    <button [ngClass]='loadProductButStyle' (click)="navButton('loadProduct')">Load Products</button>
 </nav>
 <hr>
 <div [ngSwitch]="title">
@@ -19,5 +21,11 @@
     </div>
     <div *ngSwitchCase="'employeelist'">
         <app-employeelist></app-employeelist>
+    </div>
+    <div *ngSwitchCase="'productManage'">
+        <app-product-management></app-product-management>
+    </div>
+    <div *ngSwitchCase="'loadProduct'">
+        <app-load-products></app-load-products>
     </div>
 </div>

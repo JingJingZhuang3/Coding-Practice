@@ -1,0 +1,14 @@
+<h1>Load Product - HttpClient Practice</h1>
+<hr>
+<table>
+    <tr *ngFor="let product of products">
+        <td>{{product.lid}}</td>
+        <td>{{product.title}}</td>
+        <td> <img style="width: 100px;" [src]="'http://www.codeboy.com:9999/' + product.pic" /> </td>
+        <td>{{product.price | currency}}</td>
+        <td>{{product.spec}}</td>
+    </tr>
+</table>
+<button (click)='prevPage()'>Previous</button>
+{{page}}
+<button (click)='nextPage()'>Next</button>

@@ -26,6 +26,14 @@ export class AppComponent {
   employeelistButStyle = {
     btn: false,
   };
+
+  productManageButStyle = {
+    btn: false,
+  };
+
+  loadProductButStyle = {
+    btn: false,
+  };
   navButton(nav: string) {
     if (nav == 'dataBinding') {
       this.title = nav;
@@ -54,18 +62,39 @@ export class AppComponent {
       this.directiveButStyle.btn = true;
       this.todoButStyle.btn = false;
       this.employeelistButStyle.btn = false;
+      this.productManageButStyle.btn = false;
     } else if (nav == 'todolist') {
       this.title = nav;
       this.bindingButStyle.btn = false;
       this.directiveButStyle.btn = false;
       this.todoButStyle.btn = true;
       this.employeelistButStyle.btn = false;
+      this.productManageButStyle.btn = false;
+      this.loadProductButStyle.btn = false;
     } else if (nav == 'employeelist') {
       this.title = nav;
       this.bindingButStyle.btn = false;
       this.directiveButStyle.btn = false;
       this.todoButStyle.btn = false;
       this.employeelistButStyle.btn = true;
+      this.productManageButStyle.btn = false;
+      this.loadProductButStyle.btn = false;
+    } else if (nav == 'productManage') {
+      this.title = nav;
+      this.bindingButStyle.btn = false;
+      this.directiveButStyle.btn = false;
+      this.todoButStyle.btn = false;
+      this.employeelistButStyle.btn = false;
+      this.productManageButStyle.btn = true;
+      this.loadProductButStyle.btn = false;
+    } else if ((nav = 'loadProduct')) {
+      this.title = nav;
+      this.bindingButStyle.btn = false;
+      this.directiveButStyle.btn = false;
+      this.todoButStyle.btn = false;
+      this.employeelistButStyle.btn = false;
+      this.productManageButStyle.btn = false;
+      this.loadProductButStyle.btn = true;
     }
   }
 }

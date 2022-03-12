@@ -5,17 +5,21 @@
     <tr>
         <th>ID</th>
         <th>Name</th>
-        <th>Salary</th>
+        <th>Salary - $</th>
+        <th>Salary - ￥</th>
         <th>Birthday</th>
         <th>Gender</th>
         <th>Politics Status - Short</th>
         <th>Politics Status - Long</th>
     </tr>
     <tr *ngFor="let emp of empList">
+        <!-- Predefine Pipes -->
         <td>{{emp.eid}}</td>
-        <td>{{emp.ename | uppercase}}</td>
+        <td>{{emp.ename | slice:0:3 | uppercase}}</td>
         <td>{{emp.salary | currency }}</td>
+        <td>{{emp.salary | currency:'￥' }}</td>
         <td>{{emp.birthday | date}}</td>
+        <!-- Custom Pipes -->
         <!-- use : means pass param to custom pipe -->
         <!-- <td>{{emp.gender | gender : 'zh'}}</td> -->
         <td>{{emp.gender | gender}}</td>
@@ -23,3 +27,6 @@
         <td>{{emp.zzmm | zzmm:'long'}}</td>
     </tr>
 </table>
+<hr>
+<h1>Json pipe</h1>
+{{empList | json}}
