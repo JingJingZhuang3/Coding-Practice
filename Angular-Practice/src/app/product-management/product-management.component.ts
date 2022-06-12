@@ -10,13 +10,13 @@ export class ProductManagementComponent implements OnInit {
   constructor(private logService: LogService) {}
 
   ngOnInit(): void {}
-
+  loglist: string[] = [];
   doAdd() {
     let action = 'Add product';
-    this.logService.doLog(action);
+    this.loglist.push(this.logService.doLog(action));
   }
   doDelete() {
     let action = 'Delete product';
-    this.logService.doLog(action);
+    this.loglist.push(this.logService.doLog(action));
   }
 }

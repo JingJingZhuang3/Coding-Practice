@@ -3,3 +3,13 @@
 <hr>
 <button (click)="doAdd()">Add Product</button>
 <button (click)="doDelete()">Delete Product</button>
+<div *ngIf="loglist.length != 0 ; else pending">
+    <ol>
+        <li *ngFor="let log of loglist">
+            {{log}}
+        </li>
+    </ol>
+</div>
+<ng-template #pending>
+    <h3>No log for now...</h3>
+</ng-template>

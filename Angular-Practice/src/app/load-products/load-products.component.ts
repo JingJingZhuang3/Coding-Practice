@@ -9,6 +9,7 @@ import { ProductsService } from '../products.service';
 export class LoadProductsComponent implements OnInit {
   constructor(private productsService: ProductsService) {}
   products: any;
+  // Component lifecycle hook function: ngOnInit()
   ngOnInit(): void {
     this.loadProduct();
   }

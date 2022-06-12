@@ -23,6 +23,8 @@
 <!-- ngModelChange: listen user input -->
 {{uname}}'s Age is <input type="text" [(ngModel)]="age" (ngModelChange)="doUnameChange()">
 {{ msg }}
+<br>
+Your Age is <input type="text"  (ngModelChange)="doUnameChange()">
 <h1>Attribute Directives: ngStyle</h1>
 <button [ngStyle]="myStyleObj" (click)="loadMore()">Change Color</button>
 

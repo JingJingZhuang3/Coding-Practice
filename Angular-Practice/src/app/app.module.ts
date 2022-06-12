@@ -26,6 +26,7 @@ import { LoadProductsComponent } from './load-products/load-products.component';
     ProductManagementComponent,
     LoadProductsComponent,
   ],
+  // use ngModule must import FormsModule first
   imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

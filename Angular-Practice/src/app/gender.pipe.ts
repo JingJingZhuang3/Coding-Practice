@@ -12,7 +12,7 @@ export class GenderPipe {
       } else if (val == 0) {
         return '女';
       } else {
-        return '位置';
+        return '未知';
       }
     } else {
       if (val == 1) {

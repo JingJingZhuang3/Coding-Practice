@@ -1,6 +1,9 @@
 <h1>Load Product - HttpClient Practice</h1>
 <hr>
 <table>
+    <tr *ngIf="products.length==0">
+        <td>No data found</td>
+    </tr>
     <tr *ngFor="let product of products">
         <td>{{product.lid}}</td>
         <td>{{product.title}}</td>

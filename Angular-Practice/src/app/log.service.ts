@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-// dependency injection
+// dependency injection: service should be injectable
 @Injectable({
   providedIn: 'root',
 })
@@ -9,6 +9,6 @@ export class LogService {
   doLog(action: any) {
     let uname = 'Admin';
     let time = new Date();
-    console.log(`Manager: ${uname} Time: ${time} Action: ${action}`);
+    return `Manager: ${uname} Time: ${time} Action: ${action}`;
   }
 }
