@@ -1,0 +1,12 @@
+<div #c0 style="background: rgb(234, 255, 188)">
+    <h1>{{userName}}'s Blog</h1>
+    <hr>
+    <!-- chlid component 1: Parent <= Child-->
+    <app-chlid1-modify #c1 (nameChangedEvent)="handleEvent($event)"></app-chlid1-modify>
+    <br>
+    <!-- chlid component 2: Parent => Child -->
+    <app-chlid2-photo #c2 [child2Name]="userName"></app-chlid2-photo>
+
+    <hr>
+    <button (click)="print()">Print Chlid Components</button>
+</div>

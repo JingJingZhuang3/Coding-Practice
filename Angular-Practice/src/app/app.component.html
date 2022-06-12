@@ -2,9 +2,11 @@
     <button [ngClass]="bindingButStyle" (click)="navButton('dataBinding')">Data Binding</button> |
     <button [ngClass]="directiveButStyle" (click)="navButton('directives')">Directives</button> |
     <button [ngClass]="todoButStyle" (click)="navButton('todolist')">To-Do List</button> |
-    <button [ngClass]="employeelistButStyle" (click)="navButton('employeelist')">Employee List</button> |
-    <button [ngClass]='productManageButStyle' (click)="navButton('productManage')">Product Management</button> |
-    <button [ngClass]='loadProductButStyle' (click)="navButton('loadProduct')">Load Products</button>
+    <button [ngClass]="employeelistButStyle" (click)="navButton('employeelist')">Pipe/Custom Pipe</button> |
+    <button [ngClass]='productManageButStyle' (click)="navButton('productManage')">Dependency Injection</button> |
+    <button [ngClass]='loadProductButStyle' (click)="navButton('loadProduct')">Service: HttpClient Request</button> |
+    <button [ngClass]='blogButStyle' (click)="navButton('Blog')">Transfer Data: parent <=> chlid</button>
+
 </nav>
 <hr>
 <div [ngSwitch]="title">
@@ -27,5 +29,8 @@
     </div>
     <div *ngSwitchCase="'loadProduct'">
         <app-load-products></app-load-products>
+    </div>
+    <div *ngSwitchCase="'Blog'">
+        <app-parent-blog></app-parent-blog>
     </div>
 </div>

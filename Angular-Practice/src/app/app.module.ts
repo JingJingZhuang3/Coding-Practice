@@ -13,6 +13,9 @@ import { ZzmmPipe } from './zzmm.pipe';
 import { ProductManagementComponent } from './product-management/product-management.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoadProductsComponent } from './load-products/load-products.component';
+import { ParentBlogComponent } from './parent-blog/parent-blog.component';
+import { Chlid1ModifyComponent } from './chlid1-modify/chlid1-modify.component';
+import { Chlid2PhotoComponent } from './chlid2-photo/chlid2-photo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +28,9 @@ import { LoadProductsComponent } from './load-products/load-products.component';
     ZzmmPipe,
     ProductManagementComponent,
     LoadProductsComponent,
+    ParentBlogComponent,
+    Chlid1ModifyComponent,
+    Chlid2PhotoComponent,
   ],
   // use ngModule must import FormsModule first
   imports: [BrowserModule, FormsModule, HttpClientModule],

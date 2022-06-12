@@ -29,6 +29,10 @@ export class AppComponent {
   loadProductButStyle = {
     btn: false,
   };
+
+  blogButStyle={
+    btn: false,
+  }
   navButton(nav: string) {
     if (nav == 'dataBinding') {
       this.title = nav;
@@ -38,6 +42,7 @@ export class AppComponent {
       this.employeelistButStyle.btn = false;
       this.productManageButStyle.btn = false;
       this.loadProductButStyle.btn = false;
+      this.blogButStyle.btn=false
     } else if (nav == 'directives') {
       this.title = nav;
       this.bindingButStyle.btn = false;
@@ -46,6 +51,7 @@ export class AppComponent {
       this.employeelistButStyle.btn = false;
       this.productManageButStyle.btn = false;
       this.loadProductButStyle.btn = false;
+      this.blogButStyle.btn=false
     } else if (nav == 'todolist') {
       this.title = nav;
       this.bindingButStyle.btn = false;
@@ -54,6 +60,7 @@ export class AppComponent {
       this.employeelistButStyle.btn = false;
       this.productManageButStyle.btn = false;
       this.loadProductButStyle.btn = false;
+      this.blogButStyle.btn=false
     } else if (nav == 'employeelist') {
       this.title = nav;
       this.bindingButStyle.btn = false;
@@ -62,6 +69,7 @@ export class AppComponent {
       this.employeelistButStyle.btn = true;
       this.productManageButStyle.btn = false;
       this.loadProductButStyle.btn = false;
+      this.blogButStyle.btn=false
     } else if (nav == 'productManage') {
       this.title = nav;
       this.bindingButStyle.btn = false;
@@ -70,7 +78,8 @@ export class AppComponent {
       this.employeelistButStyle.btn = false;
       this.productManageButStyle.btn = true;
       this.loadProductButStyle.btn = false;
-    } else if ((nav = 'loadProduct')) {
+      this.blogButStyle.btn=false
+    } else if (nav == 'loadProduct') {
       this.title = nav;
       this.bindingButStyle.btn = false;
       this.directiveButStyle.btn = false;
@@ -78,6 +87,16 @@ export class AppComponent {
       this.employeelistButStyle.btn = false;
       this.productManageButStyle.btn = false;
       this.loadProductButStyle.btn = true;
+      this.blogButStyle.btn=false
+    }else if (nav=='Blog'){
+      this.title = nav;
+      this.bindingButStyle.btn = false;
+      this.directiveButStyle.btn = false;
+      this.todoButStyle.btn = false;
+      this.employeelistButStyle.btn = false;
+      this.productManageButStyle.btn = false;
+      this.loadProductButStyle.btn = false;
+      this.blogButStyle.btn=true
     }
   }
 }
