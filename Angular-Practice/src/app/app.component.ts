@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'dataBinding';
+  title = 'router';
   // ngClass => decided the css style be display or not
   bindingButStyle = {
-    btn: true,
+    btn: false,
   };
   directiveButStyle = {
     btn: false,
@@ -33,6 +33,11 @@ export class AppComponent {
   blogButStyle={
     btn: false,
   }
+
+  routeButStyle={
+    btn: true,
+  }
+
   navButton(nav: string) {
     if (nav == 'dataBinding') {
       this.title = nav;
@@ -43,6 +48,7 @@ export class AppComponent {
       this.productManageButStyle.btn = false;
       this.loadProductButStyle.btn = false;
       this.blogButStyle.btn=false
+      this.routeButStyle.btn=false
     } else if (nav == 'directives') {
       this.title = nav;
       this.bindingButStyle.btn = false;
@@ -52,6 +58,7 @@ export class AppComponent {
       this.productManageButStyle.btn = false;
       this.loadProductButStyle.btn = false;
       this.blogButStyle.btn=false
+      this.routeButStyle.btn=false
     } else if (nav == 'todolist') {
       this.title = nav;
       this.bindingButStyle.btn = false;
@@ -61,6 +68,7 @@ export class AppComponent {
       this.productManageButStyle.btn = false;
       this.loadProductButStyle.btn = false;
       this.blogButStyle.btn=false
+      this.routeButStyle.btn=false
     } else if (nav == 'employeelist') {
       this.title = nav;
       this.bindingButStyle.btn = false;
@@ -70,6 +78,7 @@ export class AppComponent {
       this.productManageButStyle.btn = false;
       this.loadProductButStyle.btn = false;
       this.blogButStyle.btn=false
+      this.routeButStyle.btn=false
     } else if (nav == 'productManage') {
       this.title = nav;
       this.bindingButStyle.btn = false;
@@ -79,6 +88,7 @@ export class AppComponent {
       this.productManageButStyle.btn = true;
       this.loadProductButStyle.btn = false;
       this.blogButStyle.btn=false
+      this.routeButStyle.btn=false
     } else if (nav == 'loadProduct') {
       this.title = nav;
       this.bindingButStyle.btn = false;
@@ -88,6 +98,7 @@ export class AppComponent {
       this.productManageButStyle.btn = false;
       this.loadProductButStyle.btn = true;
       this.blogButStyle.btn=false
+      this.routeButStyle.btn=false
     }else if (nav=='Blog'){
       this.title = nav;
       this.bindingButStyle.btn = false;
@@ -97,6 +108,17 @@ export class AppComponent {
       this.productManageButStyle.btn = false;
       this.loadProductButStyle.btn = false;
       this.blogButStyle.btn=true
+      this.routeButStyle.btn=false
+    }else if (nav=='router'){
+      this.title = nav;
+      this.bindingButStyle.btn = false;
+      this.directiveButStyle.btn = false;
+      this.todoButStyle.btn = false;
+      this.employeelistButStyle.btn = false;
+      this.productManageButStyle.btn = false;
+      this.loadProductButStyle.btn = false;
+      this.blogButStyle.btn=false;
+      this.routeButStyle.btn=true
     }
   }
 }

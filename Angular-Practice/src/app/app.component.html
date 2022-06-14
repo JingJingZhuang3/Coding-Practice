@@ -6,6 +6,7 @@
     <button [ngClass]='productManageButStyle' (click)="navButton('productManage')">Dependency Injection</button> |
     <button [ngClass]='loadProductButStyle' (click)="navButton('loadProduct')">Service: HttpClient Request</button> |
     <button [ngClass]='blogButStyle' (click)="navButton('Blog')">Transfer Data: parent <=> chlid</button>
+    <button [ngClass]='routeButStyle' (click)="navButton('router')">Route/Nav practice</button>
 
 </nav>
 <hr>
@@ -32,5 +33,11 @@
     </div>
     <div *ngSwitchCase="'Blog'">
         <app-parent-blog></app-parent-blog>
+    </div>
+    <div *ngSwitchCase="'router'">
+        <h1>XX商城</h1>
+        <hr>
+        <!-- 这行的位置指定了navigate的网站在哪display -->
+        <router-outlet></router-outlet>
     </div>
 </div>

@@ -16,6 +16,12 @@ import { LoadProductsComponent } from './load-products/load-products.component';
 import { ParentBlogComponent } from './parent-blog/parent-blog.component';
 import { Chlid1ModifyComponent } from './chlid1-modify/chlid1-modify.component';
 import { Chlid2PhotoComponent } from './chlid2-photo/chlid2-photo.component';
+import { RouteIndexComponent } from './route-index/route-index.component';
+import { RouteProductListComponent } from './route-product-list/route-product-list.component';
+import { RouteProductDetailComponent } from './route-product-detail/route-product-detail.component';
+import { RouteUserCenterComponent } from './route-user-center/route-user-center.component';
+import { RouterModule } from '@angular/router';
+import { RouteNotFoundComponent } from './route-not-found/route-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,9 +37,24 @@ import { Chlid2PhotoComponent } from './chlid2-photo/chlid2-photo.component';
     ParentBlogComponent,
     Chlid1ModifyComponent,
     Chlid2PhotoComponent,
+    RouteIndexComponent,
+    RouteProductListComponent,
+    RouteProductDetailComponent,
+    RouteUserCenterComponent,
+    RouteNotFoundComponent,
   ],
   // use ngModule must import FormsModule first
-  imports: [BrowserModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule,
+    RouterModule.forRoot([
+      { path:'', component: RouteIndexComponent },
+      { path: 'index', redirectTo: '' },
+      { path: 'plist', component: RouteProductListComponent},
+      { path: 'pdetail', component: RouteProductDetailComponent },
+      { path: 'ucenter', component: RouteUserCenterComponent },
+      // ** => match any path, must be last position
+      { path: '**', component: RouteNotFoundComponent}
+    ]),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
