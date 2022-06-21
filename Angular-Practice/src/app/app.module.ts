@@ -22,6 +22,9 @@ import { RouteProductDetailComponent } from './route-product-detail/route-produc
 import { RouteUserCenterComponent } from './route-user-center/route-user-center.component';
 import { RouterModule } from '@angular/router';
 import { RouteNotFoundComponent } from './route-not-found/route-not-found.component';
+import { RouteAvatarComponent } from './route-avatar/route-avatar.component';
+import { RouteSecurityComponent } from './route-security/route-security.component';
+import { RouteInfoComponent } from './route-info/route-info.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,15 +45,27 @@ import { RouteNotFoundComponent } from './route-not-found/route-not-found.compon
     RouteProductDetailComponent,
     RouteUserCenterComponent,
     RouteNotFoundComponent,
+    RouteAvatarComponent,
+    RouteSecurityComponent,
+    RouteInfoComponent,
   ],
   // use ngModule must import FormsModule first
   imports: [BrowserModule, FormsModule, HttpClientModule,
     RouterModule.forRoot([
-      { path:'', component: RouteIndexComponent },
-      { path: 'index', redirectTo: '' },
+      { path:'', redirectTo: 'index', pathMatch:'full'  },
+      { path: 'index',component: RouteIndexComponent },
       { path: 'plist', component: RouteProductListComponent},
-      { path: 'pdetail', component: RouteProductDetailComponent },
-      { path: 'ucenter', component: RouteUserCenterComponent },
+      { path: 'pdetail/:lid', component: RouteProductDetailComponent },
+      { 
+        path: 'ucenter', 
+        component: RouteUserCenterComponent,
+        children: [ // second level route
+          {path:'', component: RouteInfoComponent},
+          {path:'info', component: RouteInfoComponent},
+          {path:'avatar', component: RouteAvatarComponent},
+          {path:'security', component: RouteSecurityComponent}
+        ] 
+      },
       // ** => match any path, must be last position
       { path: '**', component: RouteNotFoundComponent}
     ]),

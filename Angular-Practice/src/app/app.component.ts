@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  constructor(private router:Router){}
   title = 'router';
   // ngClass => decided the css style be display or not
   bindingButStyle = {
@@ -119,6 +121,7 @@ export class AppComponent {
       this.loadProductButStyle.btn = false;
       this.blogButStyle.btn=false;
       this.routeButStyle.btn=true
+      this.router.navigateByUrl('/index')
     }
   }
 }

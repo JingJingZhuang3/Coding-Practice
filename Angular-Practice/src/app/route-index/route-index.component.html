@@ -1,1 +1,12 @@
-<p>route-index works!</p>
+<!-- 
+    traditional href can be route to other components, 
+    but the DOM tree will be reconstruct (NOT SPA).
+    So never use href="", instead, use routerLink=""
+-->
+<p>Template Redirect：<button routerLink="/ucenter">User Center</button></p> 
+<!-- 
+    if not add '/', 
+    then the url will be append after index 
+    (http://localhost:4200/index/ucenter) 
+-->
+<p>Script Redirect：<button (click)="jump()">Product List</button></p> 
