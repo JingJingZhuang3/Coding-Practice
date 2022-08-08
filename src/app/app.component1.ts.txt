@@ -1,0 +1,63 @@
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AlertController, IonInfiniteScroll, IonSlide, IonSlides } from '@ionic/angular';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss'],
+})
+export class AppComponent implements OnInit {
+  @ViewChild('myAd', {static: true})
+  private mySlides:IonSlides
+
+  @ViewChild('myScroll', {static: true})
+  private myInfiniteScroll:IonInfiniteScroll
+
+  list:number[] = [56,123,789,456,2,6,489,12,3,8,4,3848,53944,3356,123848,879]
+  ngOnInit(): void {
+    // let the slide able to autoplay
+    this.mySlides.startAutoplay()
+  }
+
+  constructor(private alertController:AlertController) {}
+
+  loadMore(){
+    console.log("Loading data...")
+    // mock Asyn XHR request, get data from server
+    setTimeout(() => {
+      for (let i = 0; i < 10; i++) {
+        let n = Math.floor(Math.random()*9000 + 1000)
+        this.list.push(n)
+      }
+      // inform infinite scroll component: loading is complete, 
+      // otherwise it only load once
+      this.myInfiniteScroll.complete()
+    }, 1000);
+  }
+
+  // alert controller function
+  doQuit(){
+    this.alertController.create({
+      header: "Confirm Logout",
+      message: "You sure want to logout?",
+      buttons: [
+        {
+          text: 'Yes',
+          role: 'yes',
+          handler: ()=>{
+            console.log("Successfully logged out!")
+          }
+        },
+       {
+          text: 'No',
+          handler: ()=>{
+          console.log("User wanna stay...")
+      }}
+      ]
+    }).then((myAlert)=>{
+      // display pop-out window
+      myAlert.present()
+    })
+    
+  }
+}

@@ -1,0 +1,165 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    Grid:
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="box">1</div>
+        </ion-col>
+        <ion-col>
+          <div class="box">2</div>
+        </ion-col>
+        <ion-col>
+          <div class="box">3</div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6" offset="3">
+          <!-- max size is 12, 6=half, offset=3 means left=>3 -->
+          <div class="box">6/12</div> 
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1">
+          <!-- max size is 12, size+offset=12 -->
+          <div class="box"><</div> 
+        </ion-col>
+        <ion-col size="1" offset="10">
+          <div class="box">x</div> 
+        </ion-col>
+      </ion-row>
+      <!-- 调整两列出现顺序 -->
+      <ion-row>
+        <ion-col size="8" push="4" >
+          <!-- max size is 12, size+offset=12 -->
+          <div class="box" style="border:1px solid #f00">8/12</div> 
+        </ion-col>
+        <ion-col size="4" pull="8">
+          <div class="box" style="border:1px solid #00f">4/12</div> 
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    Badge:
+    <ion-badge>Default</ion-badge>
+    <ion-badge color="primary">Primary</ion-badge>
+    <ion-badge color="secondary">Secondary</ion-badge>
+    <ion-badge color="tertiary">Tertiary</ion-badge>
+    <ion-badge color="success">Success</ion-badge>
+    <ion-badge color="warning">Warning</ion-badge>
+    <ion-badge color="danger">Danger</ion-badge>
+    <ion-badge color="light">Light</ion-badge>
+    <ion-badge color="medium">Medium</ion-badge>
+    <ion-badge color="dark">Dark</ion-badge>
+    <br>
+    Button:
+    <ion-button>Default</ion-button>
+    <ion-button color="primary">Primary</ion-button>
+    <ion-button color="secondary">Secondary</ion-button>
+    <ion-button color="tertiary">Tertiary</ion-button>
+    <ion-button color="success">Success</ion-button>
+    <ion-button color="warning">Warning</ion-button>
+    <ion-button color="danger">Danger</ion-button>
+    <ion-button color="light">Light</ion-button>
+    <ion-button color="medium">Medium</ion-button>
+    <ion-button color="dark">Dark</ion-button>
+    <ion-button size="small">small</ion-button>
+    <ion-button size="large">large</ion-button>
+    <ion-button expand="round">round</ion-button>
+    <ion-button expand="block">block</ion-button>
+    <ion-button expand="full">expand</ion-button>
+    <ion-button href="https://ionicframework.com/docs/components">Direct to Ionic official website</ion-button>
+    <br>
+
+    Slot button:
+    <ion-button>
+      <ion-icon name="home" slot="start"></ion-icon>Home
+    </ion-button>
+    <ion-button>
+      <ion-icon name="people" slot="end"></ion-icon>People
+    </ion-button>
+    <ion-button>
+      <ion-icon name="person" slot="icon-only"></ion-icon>
+    </ion-button>
+
+    
+    <br>
+    Icon:
+    <ion-icon name="person"></ion-icon>
+    <ion-icon name="cloud-download-outline"></ion-icon>
+
+    <br>
+    Input:
+    <ion-input type="text" placeholder="Enter username"></ion-input>
+    <ion-input type="password" placeholder="Enter password"></ion-input>
+    <ion-input clearInput type="password" placeholder="Enter password (clear input)"></ion-input>
+    Input w/ label:
+    <!-- 下划线 -->
+    <ion-item>
+      <ion-label>Username：</ion-label>
+      <ion-input type="password" placeholder="Enter password"></ion-input> 
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">floating position:</ion-label>
+      <ion-input type="password" placeholder="Enter password"></ion-input> 
+    </ion-item><ion-item>
+      <ion-label position="stacked">stacked position:</ion-label>
+      <ion-input type="password" placeholder="Enter password"></ion-input> 
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">fixed position:</ion-label>
+      <ion-input type="password" placeholder="Enter password"></ion-input> 
+    </ion-item>
+    Search bar:
+    <ion-searchbar placeholder="search..."></ion-searchbar>
+    <ion-searchbar showCancelButton="always" placeholder="always cancel"></ion-searchbar>
+    <ion-searchbar showCancelButton="never" placeholder="never cancel"></ion-searchbar>
+    <ion-searchbar showCancelButton="focus" placeholder="focus cancel"></ion-searchbar>
+    <br>
+    Slider (autoplay): 
+    <ion-slides pager="true" #myAd>
+      <ion-slide>
+        <img src="../assets/1.jpg">
+      </ion-slide>
+      <ion-slide>
+        <img src="../assets/2.jpg">
+      </ion-slide>
+      <ion-slide>
+        <img src="../assets/3.jpg">
+      </ion-slide>
+    </ion-slides>
+    <h3>Pop-out window</h3>
+    <ion-button (click)="doQuit()">LOG OUT</ion-button>
+
+    <br>
+    <h3>Infinity scroll:</h3>
+    <ion-card>
+      <ion-item *ngFor="let num of list; index as i">
+        <ion-label>
+          <h2>{{i}} - {{num}}</h2>
+          <h3>something...</h3>
+        </ion-label>
+      </ion-item>
+      <!-- ionic infinity scroll -->
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMore()" #myScroll>
+        <ion-infinite-scroll-content 
+          loadingSpinner="bubbles"
+          loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-card>
+
+    
+  </ion-content>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title>Footer</ion-title>
+    </ion-toolbar>
+  </ion-footer>
+</ion-app>
